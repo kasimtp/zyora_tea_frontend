@@ -4,7 +4,7 @@ import Products from './Products.jsx'
 
 const Home = () => {
   return (
-   <div className="max-w-7xl bg-red-000  ml-0 mx-auto">
+   <div className="w-full">
       <Hero  />
       <Products/>
    </div>

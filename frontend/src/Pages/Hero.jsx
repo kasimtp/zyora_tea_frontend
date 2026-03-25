@@ -4,7 +4,7 @@ import hero from "../assets/hero.jpg";
 const Hero = () => {
   return (
     <section
-      className="relative w-screen min-h-screen flex items-center bg-cover bg-center"
+      className="relative w-full min-h-screen flex items-center bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: `url(${hero})` }}
     >
       {/* Dark overlay */}
