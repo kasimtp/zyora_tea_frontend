@@ -1,48 +1,81 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import hero from "../assets/hero.jpg";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <section
-      className="relative w-full min-h-screen flex items-center bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: `url(${hero})` }}
-    >
-      {/* Dark overlay */}
-      {/* <div className="absolute inset-0 bg-black/40"></div> */}
+    <section className="relative w-full h-screen overflow-hidden">
+      
+      {/* Full-Screen Background Image — completely unblocked */}
+      <img
+        src={hero}
+        alt="Zyora Tea Plantation"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2500ms] ease-out ${
+          isLoaded ? "scale-100" : "scale-110"
+        }`}
+      />
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-xl ">
+      {/* Only a very gentle bottom-gradient so the bottom text is readable */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-          <p className="text-4xl  text-gray-700 sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            From the Blue Hills <br /> to Your Cup
-          </p>
+      {/* Content pinned to the bottom like a magazine cover */}
+      <div className="absolute inset-x-0 bottom-0 z-10 px-6 sm:px-10 lg:px-16 pb-14 sm:pb-20">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+          
+          {/* Left: Title */}
+          <div
+            className={`transform transition-all duration-1000 delay-300 ease-out ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
+            <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-5 border border-white/30">
+              Premium Nilgiri Tea
+            </span>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-600">
-            Experience the true taste of Nilgiris Zyora Tea. Handpicked Nilgiri
-            tea, freshly packed and delivered straight to your doorstep
-            anywhere in India.
-          </p>
+            <h1
+              className="text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.05] font-bold"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Taste the <br />
+              Highlands.
+            </h1>
+          </div>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold transition">
-              Order Now
-            </button>
+          {/* Right: Description + CTA */}
+          <div 
+            className={`max-w-md transform transition-all duration-1000 delay-500 ease-out ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">
+              Handpicked from the misty blue Nilgiris. Zyora delivers pure, organic tea straight from the estate to your cup — anywhere in India.
+            </p>
 
-            <button className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
-              Explore Tea
-            </button>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/product"
+                className="bg-white text-stone-900 hover:bg-stone-100 px-8 py-3.5 rounded-full font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+              >
+                Shop Now →
+              </Link>
+              <Link
+                to="/product"
+                className="border border-white/50 hover:border-white text-white hover:bg-white/10 px-8 py-3.5 rounded-full font-bold tracking-wide transition-all duration-300 text-sm sm:text-base"
+              >
+                Explore
+              </Link>
+            </div>
           </div>
 
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 w-full flex justify-center">
-        <div className="animate-bounce text-white text-sm">
-          Scroll ↓
-        </div>
-      </div>
     </section>
   );
 };
