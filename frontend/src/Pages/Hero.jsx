@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import hero from "../assets/hero.jpg";
+import heroinmobile from "../assets/heroinmobile.jpg"
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -12,11 +13,20 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
       
-      {/* Full-Screen Background Image — completely unblocked */}
+      {/* Desktop Background Image — hidden on mobile & tablet */}
       <img
         src={hero}
         alt="Zyora Tea Plantation"
-        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2500ms] ease-out ${
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2500ms] ease-out hidden lg:block ${
+          isLoaded ? "scale-100" : "scale-110"
+        }`}
+      />
+
+      {/* Mobile & Tablet Background Image — hidden on desktop */}
+      <img
+        src={heroinmobile}
+        alt="Zyora Tea Plantation"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2500ms] ease-out block lg:hidden ${
           isLoaded ? "scale-100" : "scale-110"
         }`}
       />

@@ -54,11 +54,11 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Zyora Logo"
-              className="h-10 w-10 object-contain transition-transform duration-500 group-hover:scale-110"
+              className="h-17 w-17 mt-3 object-contain transition-transform duration-500 group-hover:scale-110"
             />
-            <h1 className="text-3xl font-bold text-green-800 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            {/* <h1 className="text-3xl font-bold text-green-800 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
               Zyora
-            </h1>
+            </h1> */}
           </Link>
 
           {/* Desktop Menu */}
@@ -85,7 +85,7 @@ const Navbar = () => {
               to="/cart"
               className="relative flex items-center gap-2 text-gray-700 hover:text-green-700 transition bg-green-50 hover:bg-green-100 px-5 py-2.5 rounded-full font-semibold"
             >
-              <FaShoppingCart size={18} />
+              <FaShoppingCart  size={18} />
               <span>Cart</span>
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white shadow-sm">
@@ -103,7 +103,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-gray-600 hover:text-green-700 focus:outline-none p-2 rounded-md transition"
             >
-              {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
+              {menuOpen ? <FaTimes className="text-red-300 fill-current" size={26} /> : <FaBars className="text-[#556b2f]" size={26} />}
             </button>
           </div>
         </div>
