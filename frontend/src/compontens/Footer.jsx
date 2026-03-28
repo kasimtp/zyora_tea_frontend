@@ -39,7 +39,7 @@ const Footer = () => {
                 <FaInstagram size={16} />
               </a>
               <a 
-                href="https://wa.me/917592084226" 
+                href="https://wa.me/918903573830" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/50 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"
@@ -84,11 +84,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-0.5">📞</span>
-                <span>+91 7592084226</span>
+                <span>+91 8903573830</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-0.5">✉️</span>
-                <span>support@zyoratea.com</span>
+                <span>zyoratea@gmail.com</span>
               </li>
             </ul>
           </div>

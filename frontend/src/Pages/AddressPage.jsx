@@ -31,7 +31,7 @@ const AddressPage = () => {
 
   const handleWhatsAppOrder = (e) => {
     e.preventDefault();
-    const phoneNumber = "917592084226"; // User requested Whatsapp number
+    const phoneNumber = "918903573830"; // User requested Whatsapp number
     const totalAmount = selectedSize.price * quantity;
     
     // Format the WhatsApp message
