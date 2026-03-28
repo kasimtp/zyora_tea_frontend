@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const WHATSAPP_NUMBER = '917592084226'; // +91 7592084226
+const WHATSAPP_NUMBER = '918903573830'; // +91 7592084226
 const WHATSAPP_MESSAGE = 'Hello! I am interested in Zyora Tea. Can you help me?';
 
 const WhatsAppFAB = () => {
